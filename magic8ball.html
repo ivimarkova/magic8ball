@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 Ball</title>
+</head>
+<body>
+    <h1>Magic 8 Ball</h1>
+    <button onclick="askQuestion()">Ask the Magic 8 Ball</button>
+    <p id="answer"></p>
+
+    <script>
+        // Random number generator
+        function randomNumberGenerator(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // magic 8 ball sayings
+        const sayings = [
+            "Yes",
+            "No",
+            "It is certain",
+            "Don't count on it",
+            "Ask again later",
+            "My reply is no",
+            "Without a doubt",
+            "Better not tell you now",
+            "My sources say no",
+            "Yes definitely",
+            "You may rely on it",
+            "Concentrate and ask again",
+            "Cannot predict now",
+        ];
+
+        function askQuestion() {
+            const answer = sayings[randomNumberGenerator(0, sayings.length - 1)];
+            document.getElementById("answer").innerText = answer;
+        }
+    </script>
+</body>
+</html>
